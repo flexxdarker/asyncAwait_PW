@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="650">
     <DockPanel>
-        <Grid DockPanel.Dock="Top">
+        <Grid DockPanel.Dock="Top" Background="#75E6DA">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="searchWord_Tb" Background="#D4F1F4" Foreground="#05445E"/>
-            <Button x:Name="searchBtn" Content="Search" Grid.Column="1" Background="#05445E" Foreground="#D4F1F4"/>
+            <TextBox Margin="1,0,1,0" x:Name="searchWord_Tb" Background="#D4F1F4" Foreground="#05445E"/>
+            <Button Margin="1,0,1,0" x:Name="searchBtn" Content="Search" Grid.Column="1" Background="#05445E" Foreground="#D4F1F4"/>
         </Grid>
         <TextBox x:Name="path_Tb" DockPanel.Dock="Top" Foreground="#05445E" Background="#D4F1F4"/>
         <ListBox x:Name="filesLb" Background="#189AB4" Foreground="#75E6DA"/>
