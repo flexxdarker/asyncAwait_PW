@@ -1,0 +1,21 @@
+﻿<Window x:Class="asyncAwait_PW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:asyncAwait_PW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="650">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="searchWord_Tb" Background="#D4F1F4" Foreground="#05445E"/>
+            <Button x:Name="searchBtn" Content="Search" Grid.Column="1" Background="#05445E" Foreground="#D4F1F4"/>
+        </Grid>
+        <TextBox x:Name="path_Tb" DockPanel.Dock="Top" Foreground="#05445E" Background="#D4F1F4"/>
+        <ListBox x:Name="filesLb" Background="#189AB4" Foreground="#75E6DA"/>
+    </DockPanel>
+</Window>
