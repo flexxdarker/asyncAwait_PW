@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,34 @@ namespace asyncAwait_PW
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static class Info
+        {
+            public static List<string> pathToFile { get; set; }
+            public static List<int> count { get; set; }
+            public static List<string> nameOfFile { get; set; }
+        }
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        private void searchBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void SearchWordInFile(string word, string path)
+        {
+            int countTimes = 0;
+            string[] allFiles = Directory.GetFiles(path, SearchOption.AllDirectories);
+            foreach(var file in allFiles)
+            {
+                if(file.Contains(word))
+                {
+                    countTimes++;
+
+                }
+                count.Add(countTimes);
+            }
+        }
     }
 }

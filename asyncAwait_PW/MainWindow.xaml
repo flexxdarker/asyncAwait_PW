@@ -13,7 +13,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBox Margin="1,0,1,0" x:Name="searchWord_Tb" Background="#D4F1F4" Foreground="#05445E"/>
-            <Button Margin="1,0,1,0" x:Name="searchBtn" Content="Search" Grid.Column="1" Background="#05445E" Foreground="#D4F1F4"/>
+            <Button Margin="1,0,1,0" x:Name="searchBtn" Content="Search" Grid.Column="1" Background="#05445E" Foreground="#D4F1F4" Click="searchBtn_Click"/>
         </Grid>
         <TextBox x:Name="path_Tb" DockPanel.Dock="Top" Foreground="#05445E" Background="#D4F1F4"/>
         <ListBox x:Name="filesLb" Background="#189AB4" Foreground="#75E6DA"/>
