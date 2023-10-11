@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,11 +23,11 @@ namespace asyncAwait_PW
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static class Info
+        public static class Infos
         {
-            public static List<string> pathToFile { get; set; }
-            public static List<int> count { get; set; }
-            public static List<string> nameOfFile { get; set; }
+            public static List<string> pathToFile = new List<string>();
+            public static List<int> count = new List<int>();
+            public static List<string> nameOfFile = new List<string>();
         }
         public MainWindow()
         {
@@ -39,16 +41,21 @@ namespace asyncAwait_PW
         private void SearchWordInFile(string word, string path)
         {
             int countTimes = 0;
-            string[] allFiles = Directory.GetFiles(path, SearchOption.AllDirectories);
+            string[] allFiles = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
             foreach(var file in allFiles)
             {
-                if(file.Contains(word))
+                string text = File.ReadAllText(file);
+                for (int i = 0; i < text.Length; i++)
                 {
-                    countTimes++;
-
+                    if (text.Contains(word))
+                    {
+                        MatchCollection collection = Regex.Matches(text, "\bword\b");
+                        countTimes = collection.Count;
+                    }
                 }
-                count.Add(countTimes);
+                
             }
+            
         }
     }
 }
